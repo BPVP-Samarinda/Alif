@@ -44,7 +44,12 @@ class CustomersResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
                 Tables\Columns\TextColumn::make('tanggal_lahir'),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\BadgeColumn::make('status')
+                    ->enum([
+                    '0' => 'Tidak Aktif',
+                    '1' => 'Aktif',
+                    
+                    ]),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
             ])
             ->filters([

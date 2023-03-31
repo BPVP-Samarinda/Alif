@@ -46,9 +46,12 @@ class CustomersResource extends Resource
                 Tables\Columns\TextColumn::make('tanggal_lahir'),
                 Tables\Columns\BadgeColumn::make('status')
                     ->enum([
-                    '0' => 'Tidak Aktif',
-                    '1' => 'Aktif',
+                    0 => 'Tidak Aktif',
+                    1 => 'Aktif',
                     
+                    ])->colors([
+                        'danger' => static fn ($state): bool => $state == 0,
+                        'success' => static fn ($state): bool => $state == 1,
                     ]),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
             ])

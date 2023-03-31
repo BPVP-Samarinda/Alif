@@ -18,7 +18,7 @@ return new class extends Migration
             $table->boolean('status')->default(0);
             $table->string('jenis_kelamin')->default(0);
             $table->timestamps();
-
+        
         });
     }
  

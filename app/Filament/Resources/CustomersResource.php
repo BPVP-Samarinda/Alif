@@ -76,9 +76,7 @@ class CustomersResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCustomers::route('/'),
-            'create' => Pages\CreateCustomers::route('/create'),
-            'edit' => Pages\EditCustomers::route('/{record}/edit'),
+            'index' => Pages\ManageCustomers::route('/'),
         ];
     }    
 }
